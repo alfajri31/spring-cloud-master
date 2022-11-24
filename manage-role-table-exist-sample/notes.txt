@@ -1,0 +1,3 @@
+jika table role sudah ada maka adaptasikan keluaran dari nilai tabel
+jika tidak ada tidak ada many to many relation dari tabel user role dan privileges
+maka ambil data parent primary nya seperti dari role dulu atau bahkan privileges

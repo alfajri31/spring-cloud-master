@@ -1,0 +1,104 @@
+
+## 8081 is gateway
+## 8082 is user microservice
+## 8080 is mvc microservice
+## 8083 is server config
+## 8084 is mapping server
+## 8086 is operator server
+## 8761 is eureka server
+
+POST http://localhost:8081/USER/login
+Content-Type: application/json
+
+{
+  "username": "admin@admin.com",
+  "password" : "password"
+}
+
+###
+
+GET http://localhost:8081/USER/user/check
+Accept: application/json
+
+###
+
+POST http://localhost:8081/login
+Content-Type: application/json
+
+{
+  "username": "admin@admin.com",
+  "password" : "password"
+}
+###
+POST http://localhost:8082/login
+Content-Type: application/json
+
+{
+  "username": "admin@admin.com",
+  "password" : "password"
+}
+
+###
+GET http://localhost:8081/user/check
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkc2hqZHNka2ZkcyIsImV4cCI6MTY2ODk0Mjg0N30.JODLWu8UsWc6VtQuEIjbbki06y5HuLvTkL3n2-agGH0gZpC2p1S-BvtAL7psqQklaSxlk3Rg-BU8gSpwuPl5AQ
+
+###
+GET http://localhost:8082/user/check
+Accept: application/json
+Authorization: Bearer dasjdaskdjasldas
+###
+
+GET http://localhost:8080/demo/admin/check
+Accept: application/json
+
+###
+POST http://localhost:8080/demo/admin/login
+Content-Type: application/x-www-form-urlencoded
+
+username=admin@admin.com&password=password
+
+###
+
+POST http://localhost:8081/ZUPAY/demo/admin/login
+Content-Type: application/x-www-form-urlencoded
+
+username=admin@admin.com&password=password
+
+###
+
+GET https://topups-sandbox.reloadly.com/countries
+Accept: application/com.reloadly.topups-v1+json
+Authorization: Bearer eyJraWQiOiI1N2JjZjNhNy01YmYwLTQ1M2QtODQ0Mi03ODhlMTA4OWI3MDIiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzEyMCIsImlzcyI6Imh0dHBzOi8vcmVsb2FkbHktc2FuZGJveC5hdXRoMC5jb20vIiwiaHR0cHM6Ly9yZWxvYWRseS5jb20vc2FuZGJveCI6dHJ1ZSwiaHR0cHM6Ly9yZWxvYWRseS5jb20vcHJlcGFpZFVzZXJJZCI6IjE3MTIwIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIiwiYXVkIjoiaHR0cHM6Ly90b3B1cHMtaHMyNTYtc2FuZGJveC5yZWxvYWRseS5jb20iLCJuYmYiOjE2NjM0MTc0MzQsImF6cCI6IjE3MTIwIiwic2NvcGUiOiJzZW5kLXRvcHVwcyByZWFkLW9wZXJhdG9ycyByZWFkLXByb21vdGlvbnMgcmVhZC10b3B1cHMtaGlzdG9yeSByZWFkLXByZXBhaWQtYmFsYW5jZSByZWFkLXByZXBhaWQtY29tbWlzc2lvbnMiLCJleHAiOjE2NjM1MDM4MzQsImh0dHBzOi8vcmVsb2FkbHkuY29tL2p0aSI6IjI2YWJhYjRjLWZiZjktNGFkMS1iN2U2LThiYWUxMmYzOTk5YiIsImlhdCI6MTY2MzQxNzQzNCwianRpIjoiY2ExY2M0ODUtMmVmZi00Mzc5LWJlZjgtMGFhNGY4MDNjNmVmIn0.WSSvclknZBf8cujb7vd2E2KWAvE7BGXZZRorR_xlLik
+
+
+###
+
+GET https://topups-sandbox.reloadly.com/operators/countries/ID
+Accept: application/com.reloadly.topups-v1+json
+Authorization: Bearer eyJraWQiOiI1N2JjZjNhNy01YmYwLTQ1M2QtODQ0Mi03ODhlMTA4OWI3MDIiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzEyMCIsImlzcyI6Imh0dHBzOi8vcmVsb2FkbHktc2FuZGJveC5hdXRoMC5jb20vIiwiaHR0cHM6Ly9yZWxvYWRseS5jb20vc2FuZGJveCI6dHJ1ZSwiaHR0cHM6Ly9yZWxvYWRseS5jb20vcHJlcGFpZFVzZXJJZCI6IjE3MTIwIiwiZ3R5IjoiY2xpZW50LWNyZWRlbnRpYWxzIiwiYXVkIjoiaHR0cHM6Ly90b3B1cHMtaHMyNTYtc2FuZGJveC5yZWxvYWRseS5jb20iLCJuYmYiOjE2NjM0MTc0MzQsImF6cCI6IjE3MTIwIiwic2NvcGUiOiJzZW5kLXRvcHVwcyByZWFkLW9wZXJhdG9ycyByZWFkLXByb21vdGlvbnMgcmVhZC10b3B1cHMtaGlzdG9yeSByZWFkLXByZXBhaWQtYmFsYW5jZSByZWFkLXByZXBhaWQtY29tbWlzc2lvbnMiLCJleHAiOjE2NjM1MDM4MzQsImh0dHBzOi8vcmVsb2FkbHkuY29tL2p0aSI6IjI2YWJhYjRjLWZiZjktNGFkMS1iN2U2LThiYWUxMmYzOTk5YiIsImlhdCI6MTY2MzQxNzQzNCwianRpIjoiY2ExY2M0ODUtMmVmZi00Mzc5LWJlZjgtMGFhNGY4MDNjNmVmIn0.WSSvclknZBf8cujb7vd2E2KWAvE7BGXZZRorR_xlLik
+
+###
+GET http://localhost:8083/server-config/native
+Accept: application/json
+###
+###
+GET http://localhost:8083/server-config/default
+Accept: application/json
+###
+GET http://localhost:8083/actuator/info
+###
+GET http://localhost:8083/actuator/default
+###
+POST http://localhost:8083/actuator/busrefresh
+###
+POST http://localhost:8083/encrypt
+Content-Type: text/plain
+
+###
+GET http://localhost:8086/operator/list
+Content-Type: application/json
+
+###
+GET http://localhost:8081/operator/list
+Content-Type: application/json

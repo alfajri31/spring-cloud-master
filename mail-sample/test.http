@@ -1,0 +1,3 @@
+### Send POST request with json body
+POST http://localhost:8078/mail/send
+Content-Type: application/json

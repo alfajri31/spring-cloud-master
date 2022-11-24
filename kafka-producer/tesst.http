@@ -1,0 +1,3 @@
+### Send POST request with json body
+GET http://localhost:9000/kafka/send
+Content-Type: application/json

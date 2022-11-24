@@ -1,0 +1,7 @@
+### GET request with a header
+GET http://user:2355db3c-9fed-4519-a84a-d0ccbf411c85@localhost:9091/check/health
+Accept: application/json
+
+### GET request with a header
+GET http://user:2355db3c-9fed-4519-a84a-d0ccbf411c85@localhost:9091/user/all
+Accept: application/json

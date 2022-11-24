@@ -1,0 +1,6 @@
+kafka producer and consumer sample
+https://www.geeksforgeeks.org/how-to-install-and-run-apache-kafka-on-windows/
+https://medium.com/geekculture/implementing-a-kafka-consumer-and-kafka-producer-with-spring-boot-60aca7ef7551
+https://www.javainuse.com/spring/spring-boot-apache-kafka-hello-world
+https://www.baeldung.com/ops/kafka-docker-setup
+https://downloads.apache.org/kafka/3.3.1/ pilih tar.gz
