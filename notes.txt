@@ -4,3 +4,4 @@ https://medium.com/geekculture/implementing-a-kafka-consumer-and-kafka-producer-
 https://www.javainuse.com/spring/spring-boot-apache-kafka-hello-world
 https://www.baeldung.com/ops/kafka-docker-setup
 https://downloads.apache.org/kafka/3.3.1/ pilih tar.gz
+download and install offsetexplorer for monitoring
