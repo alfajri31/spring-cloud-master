@@ -9,9 +9,9 @@
         <relativePath/>
     </parent>
     <groupId>br.com.example</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>kafka-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
+    <name>kafka-consumer</name>
     <description>Demo project for Spring Boot with Kafka</description>
     <properties>
         <java.version>11</java.version>

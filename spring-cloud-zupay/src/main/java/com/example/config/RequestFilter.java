@@ -36,7 +36,7 @@ public class RequestFilter implements Filter {
         else {
             logger.info(requestPath);
         }
-
+        chain.doFilter(request, response);
     }
 
     @Override
