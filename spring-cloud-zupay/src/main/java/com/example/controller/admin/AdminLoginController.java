@@ -26,7 +26,7 @@ import java.sql.Date;
 
 @Controller
 @RequestMapping("admin")
-public class AdminLoginController extends HttpServlet {
+public class AdminLoginController  {
 
     @Autowired
     public ILoginService iLoginService;
