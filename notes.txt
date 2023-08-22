@@ -5,3 +5,5 @@ https://www.javainuse.com/spring/spring-boot-apache-kafka-hello-world
 https://www.baeldung.com/ops/kafka-docker-setup
 https://downloads.apache.org/kafka/3.3.1/ pilih tar.gz
 download and install offsetexplorer for monitoring
+how to add module in every parent project
+https://spring.io/guides/gs/multi-module/

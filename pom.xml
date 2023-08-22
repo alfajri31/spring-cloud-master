@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.springframework</groupId>
+    <artifactId>cantikapp-modules</artifactId>
+    <version>0.1.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>spring-cloud-chatroom</module>
+        <module>spring-cloud-configServer</module>
+        <module>spring-cloud-zupay</module>
+        <module>spring-cloud-eurekaServer</module>
+        <module>gateway</module>
+        <module>kafka-consumer</module>
+        <module>kafka-producer</module>
+        <module>mail-sample</module>
+        <module>manage-role-table-exist-sample</module>
+        <module>spring-cloud-mapping</module>
+        <module>mybatis-sample</module>
+        <module>spring-cloud-operator</module>
+        <module>simple-thmyleaf</module>
+        <module>spring-cloud-user</module>
+    </modules>
+
+</project>
