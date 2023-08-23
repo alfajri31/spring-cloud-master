@@ -9,6 +9,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>cantikapp-adm</module>
         <module>spring-cloud-chatroom</module>
         <module>spring-cloud-configServer</module>
         <module>spring-cloud-zupay</module>
