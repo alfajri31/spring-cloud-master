@@ -7,3 +7,12 @@ https://downloads.apache.org/kafka/3.3.1/ pilih tar.gz
 download and install offsetexplorer for monitoring
 how to add module in every parent project
 https://spring.io/guides/gs/multi-module/
+
+how to run jsp in spring so not whitelabel
+1. in pom.xml you should add <package>war</package>
+2. you must run the app with maven <module_name>:spring-boot-run
+3. if you want to debug you should download tomcat server then create configuration tomcat server
+choose, local follow this site for the steps:
+https://madhawacperera.medium.com/how-to-run-debug-your-web-application-with-intellij-idea-and-tomcat-ea30c3d15ba0
+
+
