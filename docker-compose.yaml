@@ -6,7 +6,7 @@ services:
       context: /launchtodocker
       dockerfile: Dockerfile
     ports:
-      - 8787:8788
+      - "8788:8787" #if your app run in 8787 then docker will use 8788 port
     networks:
       - my_services
   #  topup-eureka-server:
