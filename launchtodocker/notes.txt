@@ -1,0 +1,2 @@
+if you want to launch java app maven in docker use lifecycle then package to build
+but in gradle just use build
