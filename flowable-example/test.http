@@ -1,0 +1,17 @@
+### Send POST request with json body
+POST http://localhost:8021/submit
+Content-Type: application/json
+
+{
+  "id": 999,
+  "author": "fajri",
+  "url" : "www.google.com"
+}
+
+###
+GET http://localhost:8021/tasks?assignee=editors
+Content-Type: application/json
+
+###
+POST http://localhost:8021/review
+Content-Type: application/json

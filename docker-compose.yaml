@@ -1,0 +1,136 @@
+version: '2'
+services:
+  launchtodocker-server :
+    container_name: launchtodocker-server
+    build:
+      context: /launchtodocker
+      dockerfile: Dockerfile
+    ports:
+      - 8787:8788
+    networks:
+      - my_services
+  #  topup-eureka-server:
+  #    container_name: topup-eureka-server
+  #    build:
+  #      context: /topup-eureka
+  #      dockerfile: Dockerfile
+  #    image: topup-eureka:latest
+  #    ports:
+  #      - 8761:8762
+  #    networks:
+  #      - my_services
+  #  topup-api-server:
+  #    container_name: topup-api-server
+  #    build:
+  #      context: /topup-api
+  #      dockerfile: Dockerfile
+  #    image: topup-api:latest
+  #    ports:
+  #      - 8080:8071
+  #    networks:
+  #      - my_services
+#  h2: #use jdbc:h2:tcp://localhost:9092/~./test
+#    container_name: h2
+#    build:
+#      context: /
+#      dockerfile: Dockerfile
+#    ports:
+#      - '9092:9092'
+#      - '8085:8082'
+#    volumes:
+#      - h2-data:/opt/h2-data
+#    networks:
+#      - my_services
+#  topup-schedule-server:
+#    container_name: topup-schedule-server
+#    build:
+#      context: /topup-schedule
+#      dockerfile: Dockerfile
+#    image: topup-schedule:latest
+#    ports:
+#      - 8081:8072
+#    networks:
+#      - my_services
+#  topup-admin-server:
+#    container_name: topup-admin-server
+#    build:
+#      context: /topup-admin
+#      dockerfile: Dockerfile
+#    image: topup-admin:latest
+#    ports:
+#      - 8083:8073
+#    networks:
+#      - my_services
+#  kafka-consumer-1:
+#    container_name: kafka-consumer-1
+#    build:
+#      context: /kafka-consumer-node
+#      dockerfile: Dockerfile
+#    image: kafka-consumer-1:latest
+#    ports:
+#      - 8084:8074
+#    networks:
+#      - my_services
+#  my-redis:
+#    image: redis:6.2-alpine
+#    restart: always
+#    ports:
+#      - '6379:6379'
+#    environment:
+#      - REDIS_PASSWORD=password
+#      - REDIS_PORT=6379
+#      - REDIS_DATABASES=16
+#    volumes:
+#      - cache:/dаta:/root/redis
+#      - cache:/redis.conf:/usr/local/etc/redis/redis.conf
+#  zookeeper:
+#    image: confluentinc/cp-zookeeper:latest
+#    environment:
+#      ZOOKEEPER_CLIENT_PORT: 2181
+#      ZOOKEEPER_TICK_TIME: 2000
+#    ports:
+#      - 22181:2181
+#    networks:
+#      - my_services
+#  kafka:
+#    image: confluentinc/cp-kafka:latest
+#    depends_on:
+#      - zookeeper
+#    ports:
+#      - 29092:29092
+#    environment:
+#      KAFKA_BROKER_ID: 1
+#      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+#      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+#      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+#      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+#      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+#    networks:
+#      - my_services
+#  es01:
+#    image: elasticsearch:8.8.0
+#    container_name: es01
+#    environment:
+#      - node.name=es01
+#      - discovery.type=single-node
+#      - xpack.security.enabled=false
+#    ulimits:
+#      memlock:
+#        soft: -1
+#        hard: -1
+#    volumes:
+#      - data01:/usr/share/elasticsearch/data
+#    ports:
+#      - 9200:9200
+#    networks:
+#      - my_elastic
+#volumes:
+#  data01:
+#    driver: local
+#  cache:
+#    driver: local #/var/lib/docker/volumes
+#  h2-data:
+networks:
+  my_services:
+#  my_elastic:
+#    driver: bridge

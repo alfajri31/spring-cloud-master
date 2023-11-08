@@ -8,7 +8,13 @@ download and install offsetexplorer for monitoring
 how to add module in every parent project
 https://spring.io/guides/gs/multi-module/
 
-how to run jsp in spring so not whitelabel
+redis CRUD operational : 
+https://javatechonline.com/spring-boot-redis-crud-example/
+
+websocket
+https://www.javainuse.com/spring/boot-websocket
+
+how to run JSP in spring so not whitelabel in spring boot
 1. in pom.xml you should add <package>war</package>
 2. you must run the app with maven <module_name>:spring-boot-run
 3. if you want to debug you should download tomcat server then create configuration tomcat server
