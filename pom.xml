@@ -29,6 +29,7 @@
         <module>jhipster-example</module>
         <module>launchtodocker</module>
         <module>redis-example</module>
+        <module>spring-session-redis</module>
     </modules>
 
 </project>
