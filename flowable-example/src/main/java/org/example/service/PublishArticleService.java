@@ -1,0 +1,11 @@
+package org.example.service;
+
+import org.flowable.engine.delegate.DelegateExecution;
+import org.flowable.engine.delegate.JavaDelegate;
+
+public class PublishArticleService implements JavaDelegate {
+
+    public void execute(DelegateExecution execution) {
+        execution.setVariable("statusState","berhasil");
+    }
+}

@@ -24,6 +24,11 @@
         <module>spring-cloud-operator</module>
         <module>simple-thmyleaf</module>
         <module>spring-cloud-user</module>
+        <module>filter-specification</module>
+        <module>flowable-example</module>
+        <module>jhipster-example</module>
+        <module>launchtodocker</module>
+        <module>redis-example</module>
     </modules>
 
 </project>

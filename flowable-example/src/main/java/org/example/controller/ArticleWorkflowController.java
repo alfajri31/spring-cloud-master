@@ -29,5 +29,11 @@ public class ArticleWorkflowController {
         service.submitReview(approval);
     }
 
+    @GetMapping(value = "/albums")
+    public Article getAlbumById() {
+        return null;
+    }
+
+
 
 }

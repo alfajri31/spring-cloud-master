@@ -1,34 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions
-        xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:flowable="http://flowable.org/bpmn"
-        typeLanguage="http://www.w3.org/2001/XMLSchema"
-        expressionLanguage="http://www.w3.org/1999/XPath"
-        targetNamespace="http://www.flowable.org/processdef">
-        <process id="articleReview" name="A simple process for article review." isExecutable="true">
-            <startEvent id="start" />
-            <sequenceFlow sourceRef="start" targetRef="reviewArticle" />
-            <userTask id="reviewArticle" name="Review the submitted tutorial"
-                      flowable:candidateGroups="editors" />
-            <sequenceFlow sourceRef="reviewArticle" targetRef="decision" />
-            <exclusiveGateway id="decision" />
-            <sequenceFlow sourceRef="decision" targetRef="tutorialApproved">
-                <conditionExpression xsi:type="tFormalExpression">
-                    <![CDATA[${approved}]]>
-                </conditionExpression>
-            </sequenceFlow>
-            <sequenceFlow sourceRef="decision" targetRef="tutorialRejected">
-                <conditionExpression xsi:type="tFormalExpression">
-                    <![CDATA[${!approved}]]>
-                </conditionExpression>
-            </sequenceFlow>
-            <serviceTask id="tutorialApproved" name="Publish the approved tutorial."
-                         flowable:class="com.baeldung.service.PublishArticleService" />
-            <sequenceFlow sourceRef="tutorialApproved" targetRef="end" />
-            <serviceTask id="tutorialRejected" name="Send out rejection email"
-                         flowable:class="com.baeldung.service.SendMailService" />
-            <sequenceFlow sourceRef="tutorialRejected" targetRef="end" />
-            <endEvent id="end" />
-        </process>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:flowable="http://flowable.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.flowable.org/processdef" exporter="Flowable Open Source Modeler" exporterVersion="6.7.2">
+  <process id="articleReview" name="A simple process for article review" isExecutable="true">
+    <startEvent id="start" flowable:formFieldValidation="true"></startEvent>
+    <sequenceFlow id="sequenceFlow-89971d39-1a0a-45d3-9e8a-5e8624ac8633" sourceRef="start" targetRef="reviewArticle"></sequenceFlow>
+    <userTask id="reviewArticle" name="Review the submitted tutorial" flowable:candidateGroups="editors" flowable:formFieldValidation="true"></userTask>
+    <sequenceFlow id="sequenceFlow-e6d74ee5-4d90-46ac-805d-3b4e3deb6484" sourceRef="reviewArticle" targetRef="decision"></sequenceFlow>
+    <exclusiveGateway id="decision"></exclusiveGateway>
+    <sequenceFlow id="sequenceFlow-4dc8f569-0f20-4028-8df6-146b32c218a0" sourceRef="decision" targetRef="tutorialApproved">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${approved}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="sequenceFlow-c52c01d2-75f9-4e92-a0eb-f292637cfb13" sourceRef="decision" targetRef="tutorialRejected">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${!approved}]]></conditionExpression>
+    </sequenceFlow>
+    <serviceTask id="tutorialApproved" name="Publish the approved tutorial." flowable:class="org.example.service.PublishArticleService"></serviceTask>
+    <sequenceFlow id="sequenceFlow-baf42316-5aec-4534-ac55-41ae6097165a" sourceRef="tutorialApproved" targetRef="end"></sequenceFlow>
+    <serviceTask id="tutorialRejected" name="Send out rejection email" flowable:class="org.example.service.SendMailService"></serviceTask>
+    <sequenceFlow id="sequenceFlow-036650b1-2e77-420a-8b02-511c4ca2470d" sourceRef="tutorialRejected" targetRef="end"></sequenceFlow>
+    <endEvent id="end"></endEvent>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_articleReview">
+    <bpmndi:BPMNPlane bpmnElement="articleReview" id="BPMNPlane_articleReview">
+      <bpmndi:BPMNShape bpmnElement="start" id="BPMNShape_start">
+        <omgdc:Bounds height="30.0" width="30.0" x="0.0" y="95.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="reviewArticle" id="BPMNShape_reviewArticle">
+        <omgdc:Bounds height="60.0" width="100.0" x="80.0" y="80.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="decision" id="BPMNShape_decision">
+        <omgdc:Bounds height="40.0" width="40.0" x="230.0" y="90.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="tutorialApproved" id="BPMNShape_tutorialApproved">
+        <omgdc:Bounds height="60.0" width="100.0" x="320.0" y="160.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="tutorialRejected" id="BPMNShape_tutorialRejected">
+        <omgdc:Bounds height="60.0" width="100.0" x="320.0" y="0.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="end" id="BPMNShape_end">
+        <omgdc:Bounds height="28.0" width="28.0" x="470.0" y="95.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow-baf42316-5aec-4534-ac55-41ae6097165a" id="BPMNEdge_sequenceFlow-baf42316-5aec-4534-ac55-41ae6097165a" flowable:sourceDockerX="50.0" flowable:sourceDockerY="30.0" flowable:targetDockerX="14.0" flowable:targetDockerY="14.0">
+        <omgdi:waypoint x="419.9499999999838" y="190.0"></omgdi:waypoint>
+        <omgdi:waypoint x="432.0" y="190.0"></omgdi:waypoint>
+        <omgdi:waypoint x="432.0" y="110.0"></omgdi:waypoint>
+        <omgdi:waypoint x="470.0025321198765" y="109.26822082569018"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow-e6d74ee5-4d90-46ac-805d-3b4e3deb6484" id="BPMNEdge_sequenceFlow-e6d74ee5-4d90-46ac-805d-3b4e3deb6484" flowable:sourceDockerX="50.0" flowable:sourceDockerY="30.0" flowable:targetDockerX="20.0" flowable:targetDockerY="20.0">
+        <omgdi:waypoint x="179.9499999999898" y="110.0"></omgdi:waypoint>
+        <omgdi:waypoint x="230.0" y="110.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow-89971d39-1a0a-45d3-9e8a-5e8624ac8633" id="BPMNEdge_sequenceFlow-89971d39-1a0a-45d3-9e8a-5e8624ac8633" flowable:sourceDockerX="15.0" flowable:sourceDockerY="15.0" flowable:targetDockerX="50.0" flowable:targetDockerY="30.0">
+        <omgdi:waypoint x="29.949998618355412" y="110.0"></omgdi:waypoint>
+        <omgdi:waypoint x="80.0" y="110.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow-c52c01d2-75f9-4e92-a0eb-f292637cfb13" id="BPMNEdge_sequenceFlow-c52c01d2-75f9-4e92-a0eb-f292637cfb13" flowable:sourceDockerX="20.0" flowable:sourceDockerY="20.0" flowable:targetDockerX="50.0" flowable:targetDockerY="30.0">
+        <omgdi:waypoint x="269.9189252336448" y="110.0"></omgdi:waypoint>
+        <omgdi:waypoint x="282.0" y="110.0"></omgdi:waypoint>
+        <omgdi:waypoint x="282.0" y="30.000000000000007"></omgdi:waypoint>
+        <omgdi:waypoint x="319.99999999999045" y="30.000000000000007"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow-036650b1-2e77-420a-8b02-511c4ca2470d" id="BPMNEdge_sequenceFlow-036650b1-2e77-420a-8b02-511c4ca2470d" flowable:sourceDockerX="50.0" flowable:sourceDockerY="30.0" flowable:targetDockerX="14.0" flowable:targetDockerY="14.0">
+        <omgdi:waypoint x="419.95000000000005" y="30.0"></omgdi:waypoint>
+        <omgdi:waypoint x="432.0" y="30.0"></omgdi:waypoint>
+        <omgdi:waypoint x="432.0" y="110.0"></omgdi:waypoint>
+        <omgdi:waypoint x="470.0025321198765" y="109.26822082569018"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sequenceFlow-4dc8f569-0f20-4028-8df6-146b32c218a0" id="BPMNEdge_sequenceFlow-4dc8f569-0f20-4028-8df6-146b32c218a0" flowable:sourceDockerX="20.0" flowable:sourceDockerY="20.0" flowable:targetDockerX="50.0" flowable:targetDockerY="30.0">
+        <omgdi:waypoint x="269.9189252336448" y="110.0"></omgdi:waypoint>
+        <omgdi:waypoint x="282.0" y="110.0"></omgdi:waypoint>
+        <omgdi:waypoint x="282.0" y="190.0"></omgdi:waypoint>
+        <omgdi:waypoint x="320.0" y="190.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
 </definitions>

@@ -1,11 +1,8 @@
 package com.mapping.scheduled;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.google.gson.Gson;
-import com.google.gson.JsonObject;
 import com.mapping.config.HttpHeaderInterceptor;
 import com.mapping.entity.OperatorEntity;
 import com.mapping.entity.PacketEntity;
@@ -16,8 +13,6 @@ import com.mapping.model.reloadly.OperatorID;
 import com.mapping.repository.OperatorRepository;
 import com.mapping.repository.PacketRepository;
 import org.modelmapper.ModelMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -36,8 +31,6 @@ import java.util.stream.Collectors;
 @Configuration
 @EnableScheduling
 public class Schedule {
-
-    final Logger logger = LoggerFactory.getLogger(Schedule.class);
 
     @Autowired
     private Environment environment;
@@ -82,7 +75,7 @@ public class Schedule {
         });
         ModelMapper modelMapper = new ModelMapper();
         List<?> objects = entityManager.createNativeQuery("SELECT p.name,p.source_api_entity_id,p.operator_source_id FROM operator as p","partialOperatorBulkUpdate").getResultList();
-        List<OperatorEntity> operatorEntities = objects.stream().map(operator -> modelMapper.map(operator, OperatorEntity.class)).toList();
+        List<OperatorEntity> operatorEntities = objects.stream().map(operator -> modelMapper.map(operator, OperatorEntity.class)).collect(Collectors.toList());
         Set<OperatorEntity> operatorEntitySetNew = operatorEntitySet.stream().filter(object -> {
             return !operatorEntities.contains(object);
         }).collect(Collectors.toSet());
@@ -105,7 +98,7 @@ public class Schedule {
                 newMap.put("operatorEntity",operatorEntityHashMap);
                 hashMapHashSet.add(newMap);
             });
-            List<PacketEntity> packetEntities = hashMapHashSet.stream().map(operator -> modelMapper.map(operator, PacketEntity.class)).toList();
+            List<PacketEntity> packetEntities = hashMapHashSet.stream().map(operator -> modelMapper.map(operator, PacketEntity.class)).collect(Collectors.toList());
             for (PacketEntity packet : packetEntities) {
                 PacketEntity packetEntity = packetRepository.findByName(packet.getName());
                 if (packetEntity==null) {

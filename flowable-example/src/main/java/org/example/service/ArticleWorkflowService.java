@@ -48,5 +48,6 @@ public class ArticleWorkflowService {
         Map<String, Object> variables = new HashMap<String, Object>();
         variables.put("approved", approval.isStatus());
         taskService.complete(approval.getId(), variables);
+
     }
 }
