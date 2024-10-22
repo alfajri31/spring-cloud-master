@@ -1,0 +1,19 @@
+### Send POST request with json body
+POST http://localhost:8080/dcost-service/subscribe/sync
+Content-Type: application/json
+
+{
+  "userId": "49b7a371-a487-4fdb-b0d2-4ceb58656f1c",
+  "digitalPaymentIds": ["ecb6cd26-cc21-4c7d-aecd-e1cae2d99d62","1095eb1c-8611-49e5-a582-054c8037aaae","63279f87-a860-40d1-ad1d-2b298958b84b"]
+}
+
+###
+POST http://localhost:8080/dcost-service/subscribe/inquiry
+Content-Type: application/json
+
+{
+  "userId" :"49b7a371-a487-4fdb-b0d2-4ceb58656f1c",
+  "page": 0,
+  "size": 10
+}
+

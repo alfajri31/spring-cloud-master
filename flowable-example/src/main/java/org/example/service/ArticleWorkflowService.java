@@ -16,10 +16,9 @@ import java.util.stream.Collectors;
 
 @Service
 public class ArticleWorkflowService {
-    @Autowired
+
     private RuntimeService runtimeService;
 
-    @Autowired
     private TaskService taskService;
 
     @Transactional

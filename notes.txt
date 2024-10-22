@@ -10,6 +10,13 @@ download and install offsetexplorer for monitoring
 how to add module in every parent project
 https://spring.io/guides/gs/multi-module/
 
+keycloak: https://www.baeldung.com/spring-boot-keycloak
+if you have response account is not fully setup for first time you can check all required field must
+been filled and remove action required update like "update_password" or "email_verified"
+after deployment keycloak use docker if you can't see realm_access for role in spring boot
+then you should checked box "Add to user info" like this guide below
+https://stackoverflow.com/questions/69331013/springboot-oauth2-with-keycloak-not-returning-mapped-roles-as-authorities
+
 Redis CRUD operational :
 https://javatechonline.com/spring-boot-redis-crud-example/
 
@@ -23,5 +30,19 @@ if you want to debug you're war file that has been deployed
 you should download tomcat server then create configuration tomcat server
 choose, local follow this step for sure:
 https://madhawacperera.medium.com/how-to-run-debug-your-web-application-with-intellij-idea-and-tomcat-ea30c3d15ba0
+
+How to unlock mssql server and mssql server auth mode you can see this youtube video :
+https://www.youtube.com/watch?v=kmU0LiNP68o
+
+https://99designs.com/discover?tags=login-form
+https://medium.com/@samarth.kumar.srivastava/deploy-angular-app-on-apache-server-9f4c93d6c519
+https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-ubuntu-22-04
+https://www.rosehosting.com/blog/how-to-install-java-17-lts-on-ubuntu-20-04/
+https://askubuntu.com/questions/84483/how-to-completely-uninstall-java ubuntu
+https://forums.docker.com/t/wsl-cannot-connect-to-the-docker-daemon-at-unix-var-run-docker-sock-is-the-docker-daemon-running/116245
+https://www.cyberciti.biz/faq/unix-linux-check-if-port-is-in-use-command/
+https://github.com/igor-baiborodine/docker-liferay-portal-ce/blob/master/compose/liferay-mysql/docker-compose.yml
+https://liferay.dev/es/blogs/-/blogs/liferay-sso-step-by-step
+https://www.aimprosoft.com/blog/liferay-sso-integration/
 
 

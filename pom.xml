@@ -30,6 +30,14 @@
         <module>launchtodocker</module>
         <module>redis-example</module>
         <module>spring-session-redis</module>
+        <module>dcost</module>
+        <module>dcostconsumer-service</module>
+        <module>keycloak-sample</module>
+        <module>ldapconn</module>
+        <module>reactive-example</module>
+        <module>spring-session-redis</module>
+        <module>spring-sessio-redis-unittest</module>
+        <module>mobile-space-order-system</module>
     </modules>
 
 </project>

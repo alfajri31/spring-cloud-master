@@ -33,8 +33,6 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private final ILoginService iLoginService;
     private final Environment environment;
 
-
-
     AuthenticationFilter(Environment environment,ILoginService iLoginService) {
         this.environment = environment;
         this.iLoginService = iLoginService;

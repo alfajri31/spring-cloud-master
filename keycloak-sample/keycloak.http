@@ -1,0 +1,19 @@
+### Send POST request with json body
+POST http://localhost:9001/realms/SpringBootKeycloak/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+client_id = login-app &
+#client_secret = JRd0jWexEbaKpTJJm3THrhKwmdn47kt5 & #if Authorization is checkmark use client_secret
+username = user1 &
+password =  password &
+grant_type = password
+
+### Send a form with the text and file fields
+GET http://localhost:9001/realms/SpringBootKeycloak/clients/login-app/client-secret
+
+### Send a form with the text and file fields
+GET http://localhost:9001/realms/SpringBootKeycloak/.well-known/openid-configuration
+
+### dasda
+POST http://localhost:8080/home/-/login/openid_connect_request?p_p_state=maximized
+
