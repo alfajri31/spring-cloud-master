@@ -1,19 +1,18 @@
 ### Send POST request with json body
-POST http://localhost:9001/realms/SpringBootKeycloak/protocol/openid-connect/token
+POST http://localhost:9001/realms/myrealm/protocol/openid-connect/token
 Content-Type: application/x-www-form-urlencoded
 
-client_id = login-app &
-#client_secret = JRd0jWexEbaKpTJJm3THrhKwmdn47kt5 & #if Authorization is checkmark use client_secret
+## client secret in credential tab will appear when authorizaion is checked in menu 'client'
+client_id = gobola &
+#client_secret = vTp48xUyyn6UB7ARQGFD1G600KNEH8Vo & #if Authorization is checkmark use client_secret
 username = user1 &
 password =  password &
 grant_type = password
 
 ### Send a form with the text and file fields
-GET http://localhost:9001/realms/SpringBootKeycloak/clients/login-app/client-secret
-
-### Send a form with the text and file fields
 GET http://localhost:9001/realms/SpringBootKeycloak/.well-known/openid-configuration
 
-### dasda
-POST http://localhost:8080/home/-/login/openid_connect_request?p_p_state=maximized
+###
+GET http://localhost:9001/auth/realms/myrealm/protocol/openid-connect/userinfo
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3NVVibTA0Z08wTDVsdXJoODVPUjFqSkliWkhmNlBncHZqeElyY3Z6YThZIn0.eyJleHAiOjE3MzM1NTIwODksImlhdCI6MTczMzU1MTc4OSwianRpIjoiYjgyODgzNjItM2MzYi00YTBmLTk5NzctMzVkMjQ2ZmM5OTNjIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDAxL3JlYWxtcy9teXJlYWxtIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6ImIwZjdiYTgxLTdhYmQtNDJkZi1iMGI0LTE4YTY2NDY3NDM1NCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImdvYm9sYSIsInNpZCI6ImI2MGZkMDY0LTAwYjgtNDJkOC1iMjYwLWMwYzQ2MDllNjY0ZSIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MTkyIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW15cmVhbG0iLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkFsIGZhanJpIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidXNlcjEiLCJnaXZlbl9uYW1lIjoiQWwiLCJmYW1pbHlfbmFtZSI6ImZhanJpIiwiZW1haWwiOiJhbGZhanJpMzExMkBnbWFpbC5jb20ifQ.OFI0VGxWb8URy1vtLpUvVEwQ5xi7Rsq13rhzZaKvyymKiAuiGCFveOhe2aavKXjeu_y2tA5rrx2lVthXGe7R89jKNiOKj5kqG0C2O6ZtM-XnfT_pu9db8-h4X7p0sRgZ7Hf8jGOmDudHLaAVNmCDPEjDiaFteMp_QEfoTGCumAwFDE5VJoCkTCi71e7p-NFXytyjPEYft-lvZ50hnttb50TB5gzBwWgU7LtTYFaAphzKZecgDk3BbnqXbqE5vrw0St3VaRjTF4MMHCPrnm0wkVUN_wDjExbD3z0ftfuH2H70VrUVXy1bZzKAb8jT65XWS68FjPNBcAZAabW4ZLgS0A
 

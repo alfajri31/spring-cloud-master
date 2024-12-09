@@ -61,15 +61,24 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain resourceServerFilterChain(HttpSecurity http) throws Exception {
         http.authorizeRequests(auth -> auth
-                .requestMatchers(new AntPathRequestMatcher("/customers*"))
-                .hasRole("user")
                 .requestMatchers(new AntPathRequestMatcher("/"))
+                .permitAll()
+                .requestMatchers(new AntPathRequestMatcher("/welcome"))
                 .permitAll()
                 .anyRequest()
                 .authenticated());
         http.oauth2ResourceServer((oauth2) -> oauth2
                 .jwt(Customizer.withDefaults()));
-        http.oauth2Login(Customizer.withDefaults())
+//        http.exceptionHandling()
+//                .authenticationEntryPoint(new CustomAuthEntryPoint())  // Use custom entry point
+//                .and();
+        http
+                .oauth2Login(oauth2Login -> oauth2Login
+                        .loginPage("/oauth2/authorization/keycloak")
+                        .successHandler(new CustomAuthenticationSuccessHandler())
+                );
+        http
+                .oauth2Login(Customizer.withDefaults())
                 .logout(logout -> logout.addLogoutHandler(keycloakLogoutHandler).logoutSuccessUrl("/"));
         return http.build();
     }
@@ -88,15 +97,15 @@ public class SecurityConfig {
                 var token = idToken.getTokenValue();
                 // Tokens can be configured to return roles under
                 // Groups or REALM ACCESS hence have to check both
-                if (userInfo.containsClaim(REALM_ACCESS_CLAIM)) {
-                    var realmAccess = userInfo.getClaimAsMap(REALM_ACCESS_CLAIM);
-                    var roles = (Collection<String>) realmAccess.get(ROLES_CLAIM);
-                    mappedAuthorities.addAll(generateAuthoritiesFromClaim(roles));
-                } else if (userInfo.getClaim(GROUPS)) {
-                    Collection<String> roles = (Collection<String>) userInfo.getClaim(
-                            GROUPS);
-                    mappedAuthorities.addAll(generateAuthoritiesFromClaim(roles));
-                }
+//                if (userInfo.containsClaim(REALM_ACCESS_CLAIM)) {
+//                    var realmAccess = userInfo.getClaimAsMap(REALM_ACCESS_CLAIM);
+//                    var roles = (Collection<String>) realmAccess.get(ROLES_CLAIM);
+//                    mappedAuthorities.addAll(generateAuthoritiesFromClaim(roles));
+//                } else if (userInfo.getClaim(GROUPS)) {
+//                    Collection<String> roles = userInfo.getClaim(
+//                            GROUPS);
+//                    mappedAuthorities.addAll(generateAuthoritiesFromClaim(roles));
+//                }
             } else {
                 var oauth2UserAuthority = (OAuth2UserAuthority) authority;
                 Map<String, Object> userAttributes = oauth2UserAuthority.getAttributes();

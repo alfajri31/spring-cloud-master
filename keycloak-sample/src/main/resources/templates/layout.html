@@ -1,7 +1,7 @@
 
 <head th:fragment="headerFragment">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Customer Portal</title>
+    <title>Welcome</title>
     <link
             href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
             rel="stylesheet"
@@ -14,5 +14,6 @@
 
 <div id="pagefoot" th:fragment="footerFragment">
     <p>Document last modified 2017/10/23.</p>
+    <h1>Hello : <span th:text="${auth}">Text ...</span></h1>
     <p>Copyright: Lorem Ipsum</p>
 </div>
