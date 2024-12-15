@@ -2,7 +2,6 @@ package com.mapping.entity;
 
 import com.mapping.entity.base.BaseEntityUUID;
 import lombok.Data;
-import lombok.ToString;
 
 import javax.persistence.*;
 

@@ -1,11 +1,7 @@
 package com.mapping.entity;
 
 import com.mapping.entity.base.BaseEntityUUID;
-import com.sun.istack.NotNull;
 import lombok.Data;
-import lombok.ToString;
-import org.hibernate.annotations.ColumnDefault;
-import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 import java.util.Set;

@@ -1,12 +1,8 @@
 package com.mapping.entity;
 
-import com.mapping.entity.base.BaseEntityAI;
 import com.mapping.entity.base.BaseEntityUUID;
 import com.mapping.entity.partial.PartialOperatorBulkUpdate;
 import lombok.Data;
-import lombok.ToString;
-import org.hibernate.type.BigIntegerType;
-
 
 import javax.persistence.*;
 import java.util.Set;

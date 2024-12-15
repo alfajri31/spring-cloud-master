@@ -1,11 +1,8 @@
 package com.example.controller.admin;
 
-import com.example.entity.UserEntity;
 import com.example.model.internal.LoginModel;
 import com.example.repository.UserRepository;
 import com.example.service.ILoginService;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,9 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.Date;
 
 @Controller
 @RequestMapping("admin")

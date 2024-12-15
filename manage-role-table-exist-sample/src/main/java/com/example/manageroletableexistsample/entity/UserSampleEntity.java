@@ -1,10 +1,8 @@
 package com.example.manageroletableexistsample.entity;
 
 import lombok.Data;
-import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 @Entity
 @Table(name = "usersample")

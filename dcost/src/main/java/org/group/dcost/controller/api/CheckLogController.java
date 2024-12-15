@@ -1,10 +1,12 @@
 package org.group.dcost.controller.api;
 
 import lombok.AllArgsConstructor;
-import org.group.dcost.dto.request.SyncRequest;
 import org.group.dcost.service.ILogService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 

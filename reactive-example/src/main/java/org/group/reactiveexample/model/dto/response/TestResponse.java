@@ -1,8 +1,5 @@
 package org.group.reactiveexample.model.dto.response;
 
-import lombok.Data;
-
-
 public class TestResponse {
     private String message;
     private String response;

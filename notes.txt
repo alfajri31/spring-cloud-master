@@ -45,4 +45,13 @@ https://github.com/igor-baiborodine/docker-liferay-portal-ce/blob/master/compose
 https://liferay.dev/es/blogs/-/blogs/liferay-sso-step-by-step
 https://www.aimprosoft.com/blog/liferay-sso-integration/
 
+so if you want you project is not too subjective based on preference you can create unit test, you can create unit test
+for more programmatic you can use mockito (package : myunittest) if more narrative you can use cucumber if you use cucumber
+then you should add file *.feature and running cucumber from it, the folder testing in package test all files test in there.
+basically you can add @Transactional in unit test to make sure you data not save to database
+during your specified test until finished. if @Rollback(false) then it reversed the data during specified test will be saved
+then if you want to cover all code project you can use mockito with 'right click' of the project and select 'more run/debug'
+and then choose 'All Test' instead of 'All Features (cucumber)' will not work for with percentage of coverage
+
+
 

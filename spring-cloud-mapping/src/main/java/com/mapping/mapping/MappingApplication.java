@@ -1,10 +1,10 @@
 package com.mapping.mapping;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mapping.entity.GlobalTokenEntity;
 import com.mapping.model.reloadly.RequestTokenModel;
 import com.mapping.model.reloadly.ResponseTokenModel;
 import com.mapping.repository.GlobalTokenRepository;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

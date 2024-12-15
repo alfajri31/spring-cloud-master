@@ -1,9 +1,7 @@
 package com.mapping.model.reloadly;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonIgnoreType;
 import lombok.Data;
 
 import java.util.ArrayList;

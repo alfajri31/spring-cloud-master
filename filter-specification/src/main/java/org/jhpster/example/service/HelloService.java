@@ -3,7 +3,6 @@ package org.jhpster.example.service;
 import org.jhpster.example.repo.HelloRepository;
 import org.jhpster.example.specification.HelloSpecification;
 import org.jhpster.example.specification.domain.Hello;
-import org.jhpster.example.specification.domain.HelloCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;

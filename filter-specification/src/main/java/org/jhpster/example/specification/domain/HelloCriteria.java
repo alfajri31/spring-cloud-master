@@ -1,6 +1,5 @@
 package org.jhpster.example.specification.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data

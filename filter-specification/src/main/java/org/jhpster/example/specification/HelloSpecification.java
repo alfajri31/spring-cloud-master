@@ -1,18 +1,13 @@
 package org.jhpster.example.specification;
 
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
-import com.mysql.cj.xdevapi.JsonArray;
-import com.mysql.cj.xdevapi.JsonValue;
-import com.vladmihalcea.hibernate.type.json.JsonNodeStringType;
-import com.vladmihalcea.hibernate.type.json.JsonStringType;
-import liquibase.repackaged.net.sf.jsqlparser.expression.JsonFunctionExpression;
 import org.flowable.variable.service.impl.types.JsonType;
 import org.jhpster.example.specification.domain.Hello;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.*;
+import javax.persistence.criteria.Expression;
+import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
 import java.util.List;
 

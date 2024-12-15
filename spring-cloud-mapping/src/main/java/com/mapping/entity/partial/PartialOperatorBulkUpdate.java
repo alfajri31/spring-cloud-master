@@ -1,8 +1,6 @@
 package com.mapping.entity.partial;
 
-import com.mapping.entity.SourceApiEntity;
 import lombok.Data;
-import org.hibernate.type.BigIntegerType;
 
 @Data
 public class PartialOperatorBulkUpdate {
