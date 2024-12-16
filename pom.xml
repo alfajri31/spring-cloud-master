@@ -37,7 +37,7 @@
         <module>reactive-example</module>
         <module>spring-session-redis</module>
         <module>spring-sessio-redis-unittest</module>
-        <module>mobile-space-order-system</module>
+        <module>relationship</module>
     </modules>
 
 </project>
