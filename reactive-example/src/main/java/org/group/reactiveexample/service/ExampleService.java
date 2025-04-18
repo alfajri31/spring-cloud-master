@@ -56,7 +56,7 @@ public class ExampleService  {
     public Mono<String> useThenInSynchronousLine() {
         //try to fetch all 1 million user student and save it and log the saved student
         Mono<Void> result = studentRepo.findAll().flatMap(this::setName).flatMap(this::saveStudent).then();
-        return result.flatMap(data -> Mono.just("Success ✅"));
+        return result.flatMap(data -> Mono.empty());
     }
 
 
