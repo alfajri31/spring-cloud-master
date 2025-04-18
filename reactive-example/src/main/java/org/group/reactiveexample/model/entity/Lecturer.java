@@ -1,16 +1,19 @@
 package org.group.reactiveexample.model.entity;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
+
+import java.util.UUID;
 
 @Data
 @Table(name = "Lecturer")
 public class Lecturer {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     private String name;
+
+    public Lecturer() {
+        this.id = UUID.randomUUID().toString(); // Manually generate UUID
+    }
 }

@@ -18,7 +18,6 @@ public interface UserSubscribeRepository extends MongoRepository<UserSubscribe, 
             String currentDate,String
             digitalPaymentId);
    @Cacheable(value = "userSubscribe",key="#userId")
-
    Page<UserSubscribe> findAllByUserId(String userId, Pageable pageable);
 
 }

@@ -46,7 +46,7 @@ public class DCostService implements IDCostService {
         Date currentDate = new Date();
         String formattedDate = dateFormat.format(currentDate);
         Integer randomAmount = Util.getRandomValue();
-        syncRequest.getDigitalPaymentIds().stream().forEach(id -> {
+        syncRequest.getDigitalPaymentIds().forEach(id -> {
             Optional<UserSubscribe> opt = userSubscribeRepository.findByCurrentDateAndDigitalPaymentId(formattedDate, id);
             if (opt.isEmpty()) {
                 UserSubscribe userSubscribe = new UserSubscribe();

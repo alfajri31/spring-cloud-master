@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.springframework</groupId>
-    <artifactId>cantikapp-modules</artifactId>
+    <artifactId>training-modules</artifactId>
     <version>0.1.0</version>
     <packaging>pom</packaging>
 
@@ -38,6 +38,9 @@
         <module>spring-session-redis</module>
         <module>spring-sessio-redis-unittest</module>
         <module>relationship</module>
+        <module>myunittest</module>
+        <module>multithreading
+        </module>
     </modules>
 
 </project>
