@@ -1,3 +1,6 @@
+the all module project can be sometime not working because every module it can be build with different java version,
+so please adjust with setting the parent with right click and module settings
+
 important please download the file also
 
 kafka producer and consumer sample
